@@ -9,6 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet var testView: UIView!
+    
+    
+    var count = 0
+    
+    
+    @IBAction func getPan(_ sender: UIPanGestureRecognizer) {
+        count += 1
+        print("this is a drag \(count)")
+        
+        //func translation(in view: UIView?) -> CGPoint
+        let location = sender.location(in: self.view)
+        
+        print(location)
+        
+        self.testView.center = location
+
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
